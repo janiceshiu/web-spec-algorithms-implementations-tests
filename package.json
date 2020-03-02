@@ -1,0 +1,14 @@
+{
+  "name": "web_spec_algorithms_implementations_and_tests",
+  "version": "0.0.1",
+  "description": "Algorithmic implementations of web specification definitions and tests for those implementations",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "author": "Janice Shiu",
+  "license": "ISC"
+}
