@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Implementation and tests for web specification algorithms</title>
+    <script type="module" src="src/index.js"></script>
+  </head>
+  <body>
+    Implementation and tests of the algorithms for `editing host` and `editable`.
+
+    Spec text extracted from the algorithms:
+
+    <h2>Editable</h2>
+    <h3><a href="src/editable.js">Implementation</a></h3>
+    <h3><a href="tests/editable-spec.js">Tests</a></h3>
+    <h3>Spec Text</h3>
+    <p>A node <var>node</var> is <dfn data-export="">editable</dfn> if the following algorithm returns
+      true:</p>
+
+      <ol>
+       <li>If <var>node</var> is not an instance of Element or Attr, then return false.</li>
+
+       <li>If <var>node</var> is an <span>editing host</span>, then return false.</li>
+
+       <li>If <var>node</var> is an Element and <var>node</var>'s <code
+       data-x="attr-contenteditable">contenteditable</code> attribute is set to the <i>false</i> state,
+       then return false.</li>
+
+       <li>If <node>var</node> is an instance of Attr, let <var>parent</var> be the <var>node</var>'s
+       ownerElement. Otherwise, if <var>node</var> is an instance of Element, let <var>parent</var> be
+       the <var>node</var>'s parentElement.</li>
+
+       <li>If <var>parent</var> is null, then return false.</li>
+
+       <li>If <var>parent</var> is neither an <span>editing host</span> nor <span>editable</span>, then
+       return false.</li>
+
+       <li>If <var>node</var> is an Element in the <span>HTML namespace</span>, <span>SVG
+       namespace</span>, or <span>MathML namespace</span>, then return true.</li>
+
+       <li>If <var>node</var> is an Attr and <var>parent</var> is an element in the HTML namespace, then
+       return true.</li>
+
+       <li>Return false.</li>
+      </ol>
+
+    <h2>Editing Host</h2>
+    <h3><a href="src/editing-host.js">Implementation</a></h3>
+    <h3><a href="tests/editing-host-spec.js">Tests</a></h3>
+    <h3>Spec Text</h3>
+    <p>An <dfn data-export="">editing host</dfn> is either an <span data-x="HTML elements">HTML
+    element</span> with its <code data-x="attr-contenteditable">contenteditable</code> attribute in
+    the <i>true</i> state, or a <span data-x="concept-tree-child">child</span> <span data-x="HTML
+    elements">HTML element</span> of a <code>Document</code> with <code
+    data-x="dom-document-designMode">designMode</code> enabled.</p>
+  </body>
+</html>
