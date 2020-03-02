@@ -18,7 +18,7 @@ export default function isEditable(node) {
   // is set to the <i>false</i> state, then return false.</li>
   if (node instanceof Element && node.contentEditable === "false") return false;
 
-  // <li>If <node>var</node> is an instance of Attr, let <var>parent</var>
+  // <li>If <var>node</var> is an instance of Attr, let <var>parent</var>
   // be the <var>node</var>'s ownerElement. Otherwise, if <var>node</var>
   // is an instance of Element, let <var>parent</var> be the <var>node</var>'s
   // parentElement.</li>

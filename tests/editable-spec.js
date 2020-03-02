@@ -31,7 +31,7 @@ export default function isEditableTests() {
   div2.contentEditable = "false";
   console.assert(isEditable(div2) === false);
 
-  // <li>If <node>var</node> is an instance of Attr, let <var>parent</var>
+  // <li>If <var>node</var> is an instance of Attr, let <var>parent</var>
   // be the <var>node</var>'s ownerElement. Otherwise, if <var>node</var>
   // is an instance of Element, let <var>parent</var> be the <var>node</var>'s
   // parentElement.</li>
